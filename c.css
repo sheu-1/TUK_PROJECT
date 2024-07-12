@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+.card-holder {
+    width: 280px;
+    height: 380px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+  }
