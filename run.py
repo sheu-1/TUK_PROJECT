@@ -1,0 +1,4 @@
+from final_year import app
+
+if __name__ == '__main__':
+    app.run(debug=True)

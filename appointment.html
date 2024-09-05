@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Set an Appointment</legend>
+      
+      <div class="form-group">
+        {{ form.fullname.label(class="form-label") }} 
+        {{ form.fullname(class="form-control") }}
+        {% if form.fullname.errors %}
+          <div class="alert alert-danger">
+            {% for error in form.fullname.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>      
+
+      <div class="form-group">
+        {{ form.phone_number.label(class="form-label") }} 
+        {{ form.phone_number(class="form-control") }}
+        {% if form.phone_number.errors %}
+          <div class="alert alert-danger">
+            {% for error in form.phone_number.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        {{ form.email.label(class="form-label") }} 
+        {{ form.email(class="form-control") }}
+        {% if form.email.errors %}
+          <div class="alert alert-danger">
+            {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        {{ form.reason.label(class="form-label") }} 
+        {{ form.reason(class="form-control") }}
+        {% if form.reason.errors %}
+          <div class="alert alert-danger">
+            {% for error in form.reason.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      </fieldset>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+</div>
+{% endblock %}
