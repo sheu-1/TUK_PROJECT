@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='sign.css') }}"
+    />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ775aDZvFJcB/aPy6hE76K7tZOEP+0I1p4F"
+      crossorigin="anonymous"
+    />
+
+    {% if title %}
+    <title>Equity Afia {{ title }}</title>
+    {% else %}
+    <title>Equity Afia</title>
+    {% endif %}
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/appointment">Appointment</a></li>
+        <li><a href="/services">Our Services</a></li>
+        <li><a href="/staff">Our Staff</a></li>
+        <li><a href="/view">View Appointments</a></li>
+        <li><a href="/test">Test</a></li>
+        <span style="float: right; margin-right: 15px">
+          <li><a href="/login">Login</a></li>
+          <li><a href="/sign_up">Sign_Up</a></li>
+        </span>
+      </ul>
+    </div>
+    {% block content%} {% endblock %}
+  </body>
+</html>

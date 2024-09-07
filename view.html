@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<br><br><br><br><br>
+
+<div class="content-section">
+  <h2>Scheduled Appointments</h2>
+  <br><br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Reason</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% for appointment in appointments %}
+      <tr>
+        <td>{{ appointment.fullname }}</td>
+        <td>{{ appointment.phone_number }}</td>
+        <td>{{ appointment.email }}</td>
+        <td>{{ appointment.reason }}</td>
+       
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

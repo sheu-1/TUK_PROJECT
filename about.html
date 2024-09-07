@@ -1,0 +1,67 @@
+{% extends "layout.html"%}
+
+{% block content%}
+    <br><br><br><br>
+    
+    <h1 style="text-align: center;">About Us</h1>
+    <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Hic et perferendis esse quas cumque ducimus, ullam, consequuntur repudiandae est perspiciatis id rem cupiditate, 
+        ea inventore reiciendis nihil sit ratione fugiat.</p>
+    <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing 
+        elit. Hic et perferendis esse quas cumque ducimus, ullam, consequuntur repudiandae est perspiciatis id rem cupiditate, 
+        ea inventore reiciendis nihil sit ratione fugiat.</p>
+        <br><br>
+    <div class="parent">
+        <div class="child">
+            <img src="{{url_for('static', filename='assets/pics/pic8.jpg')}}" alt="">
+        </div>
+        <div class="child">
+            <img src="{{url_for('static', filename='assets/pics/pic10.jpg')}}" alt="">
+        </div>
+        <div class="child">
+            <img src="{{url_for('static', filename='assets/pics/pic11.jpg')}}" alt="">
+        </div>
+    </div>
+    <br>
+
+    <div class="parent">
+        <div class="child">
+            <img src="{{url_for('static', filename='assets/pics/pic12.jpg')}}" alt="">
+        </div>
+        <div class="child">
+            <img src="{{url_for('static', filename='assets/pics/pic13.jpg')}}" alt="">
+        </div>
+        <div class="child">
+            <img src="{{url_for('static', filename='assets/pics/pic14.jpg')}}" alt="">
+        </div>
+    </div>
+
+    <br><br>
+    <div class="footer">
+        <footer>
+            <div class="parent">
+                <div class="child">
+                    <h1 style="color: red; padding-top: 19px">Interact with us on your favorite platform</h1><br>
+                    <ul>
+                        <li><a href="">TikTok</a></li>
+                        <li><a href="">WhatsApp</a></li>
+                        <li><a href="">YouTube</a></li>
+                        <li><a href="">X/Twitter</a></li>
+                        <li><a href="">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="child">
+                    <h1 style="color: red; padding-top: 19px">Contact Us</h1><br>
+                    <ul>
+                        <li>Phone: 0799608845</li>
+                        <li>Phone: 0794854945</li>
+                        <li>Email: sheundaalex@gmail.com</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+            <small>All rights reserved</small>            
+        </footer>
+    </div>
+{% endblock %}

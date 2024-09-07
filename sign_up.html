@@ -1,39 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Sign Up</h1>
-    <div class="container">
-        <form action="">
-            <div class="input">
-                <label for="">First Name</label><br><br>
-                <input type="text" placeholder="Input first name" name="" class="textbox">
-            </div>
-            <div class="input">
-                <label for="">Second Name</label><br><br>
-                <input type="text" placeholder="Input second name" name="" class="textbox">
-            </div>
-            <div class="input">
-                <label for="">Email Address</label><br><br>
-                <input type="text" placeholder="Input email address" name="" class="textbox">
-            </div>
-            <div class="input">
-                <label for="">Password</label><br><br>
-                <input type="password" placeholder="Input password" name="" class="textbox">
-            </div>
-            <div class="input">
-                <label for="">Confirm Password</label><br><br>
-                <input type="text" placeholder="Input first name" name="" class="textbox">
-            </div>
-            <div class="submit">
-                <input type="submit">
-            </div>
-        </form>
+{% extends "layout.html" %}
+
+<br><br><br><br><br>
+
+{% block content %}
+<div class="content-section">
+
+  <!-- Flash Messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          <div class="flash-messages">
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                      {{ message }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+              {% endfor %}
+          </div>
+      {% endif %}
+  {% endwith %}
+  <!-- End of Flash Messages -->
+
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Join Today</legend>
+      <div class="form-group">
+        {{ form.fullname.label }} {{ form.fullname }}
+      </div>
+      <div class="form-group">
+        {{ form.username.label }} {{ form.username }}
+      </div>
+      <div class="form-group">
+        {{ form.email.label }} {{ form.email }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label }} {{ form.password }}
+      </div>
+      <div class="form-group">
+        {{ form.confirm_password.label }} {{ form.confirm_password }}
+      </div>
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit }}
     </div>
-</body>
-</html>
+  </form>
+</div>
+
+<div class="border-top pt-3">
+  <small class="text-muted">
+    Already have an account?
+    <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+  </small>
+</div>
+{% endblock %}
